@@ -1,9 +1,33 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>signup</ion-title>
+  <ion-toolbar color="mango">
+    <ion-title>Registration</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding='true'>
+  <form>
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input autocomplete="off"  type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Username</ion-label>
+        <ion-input autocomplete="off"  type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input autocomplete="off"  type="password"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="block" share="round" color="success">Registration</ion-button>
+
+  </form>
+
+
+
+
 
 </ion-content>

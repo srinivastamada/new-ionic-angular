@@ -13,15 +13,22 @@ const routes: Routes = [
           import('../pages/feed/feed.module').then(m => m.FeedPageModule)
       },
       {
-        path: 'about',
+        path: 'messages',
         loadChildren: () =>
-          import('../pages/about/about.module').then(m => m.AboutPageModule)
+          import('../pages/messages/messages.module').then(m => m.MessagesPageModule)
       },
       {
-        path: 'contact',
+        path: 'notifications',
         loadChildren: () =>
-          import('../pages/contact/contact.module').then(
-            m => m.ContactPageModule
+          import('../pages/notifications/notifications.module').then(
+            m => m.NotificationsPageModule
+          )
+      },
+      {
+        path: 'settings',
+        loadChildren: () =>
+          import('../pages/settings/settings.module').then(
+            m => m.SettingsPageModule
           )
       }
     ]
