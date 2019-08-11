@@ -1,10 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
-
+import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-
+import { ComponentsModule } from './../../components/components.module';
 import { WelcomePage } from './welcome.page';
 
 const routes: Routes = [
@@ -19,8 +18,10 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [WelcomePage]
+  declarations: [WelcomePage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class WelcomePageModule {}
