@@ -1,5 +1,8 @@
 {
   "name": "new-ionic-angular",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
   "type": "angular"
 }
