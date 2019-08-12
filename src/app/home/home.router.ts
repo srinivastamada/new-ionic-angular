@@ -15,7 +15,9 @@ const routes: Routes = [
       {
         path: 'messages',
         loadChildren: () =>
-          import('../pages/messages/messages.module').then(m => m.MessagesPageModule)
+          import('../pages/messages/messages.module').then(
+            m => m.MessagesPageModule
+          )
       },
       {
         path: 'notifications',

@@ -1,6 +1,7 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
+
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
@@ -81,6 +82,13 @@
   --ion-color-mango-contrast-rgb: 0,0,0;
   --ion-color-mango-shade: #e0b45a;
   --ion-color-mango-tint: #ffd175;
+
+  ion-tab-button.tab-selected {
+    ion-icon, ion-label {
+      color: var(--ion-color-mango) !important;
+      --ion-color-base: var(--ion-color-mango) !important;
+    }
+  }
 }
 
 .ion-color-mango {
@@ -91,3 +99,4 @@
   --ion-color-shade: var(--ion-color-mango-shade);
   --ion-color-tint: var(--ion-color-mango-tint);
 }
+
