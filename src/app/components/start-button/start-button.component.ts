@@ -1,5 +1,5 @@
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-start-button',
@@ -11,7 +11,7 @@ export class StartButtonComponent implements OnInit {
 
   ngOnInit() {}
 
-  navigateToLogin(){
+  navigateToLogin() {
     this.router.navigate(['/login']);
   }
 }
