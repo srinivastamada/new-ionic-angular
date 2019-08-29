@@ -1,40 +1,53 @@
 import { Injectable } from '@angular/core';
+import { Plugins } from '@capacitor/core';
 
+const { Storage } = Plugins;
 @Injectable({
   providedIn: 'root'
 })
 export class StorageService {
 
-  private siteKey = 'mango';
-
   constructor() { }
 
-  getStorageType(){
-      return localStorage;
-  }
+  // JSON "set" example
+async setObject() {
+  await Storage.set({
+    key: 'user',
+    value: JSON.stringify({
+      id: 1,
+      name: 'Max'
+    })
+  });
+}
 
-  generateKey(key: string) {
-    return this.siteKey + '-' + key;
-  }
+// JSON "get" example
+async getObject() {
+  const ret = await Storage.get({ key: 'user' });
+  const user = JSON.parse(ret.value);
+}
 
+async setItem() {
+  await Storage.set({
+    key: 'name',
+    value: 'Max'
+  });
+}
 
-  store(key: string, value: any){
-      const encryptedValue = btoa(escape(JSON.stringify(value)));
-      this.getStorageType().setItem(this.generateKey(key), encryptedValue)
-  }
+async getItem() {
+  const value = await Storage.get({ key: 'name' });
+  console.log('Got item: ', value);
+}
 
-  get(key: string){
-      const encryptedValue = this.getStorageType().getItem(this.generateKey(key));
-      let value: any;
-      if(encryptedValue){
-          value = JSON.parse(unescape(atob(encryptedValue)));
-      }
-      return value
-  }
+async removeItem() {
+  await Storage.remove({ key: 'name' });
+}
 
-  clear(){
-      this.getStorageType().clear();
-  }
+async keys() {
+  const keys = await Storage.keys();
+  console.log('Got keys: ', keys);
+}
 
-
+async clear() {
+  await Storage.clear();
+}
 }
