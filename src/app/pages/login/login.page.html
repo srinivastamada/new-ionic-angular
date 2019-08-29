@@ -13,18 +13,18 @@
     <ion-list>
       <ion-item>
         <ion-label position="stacked">Username</ion-label>
-        <ion-input autocomplete="off" type="text" [(ngModel)]="postData.username"></ion-input>
+        <ion-input autocomplete="off" type="text"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Password</ion-label>
-        <ion-input autocomplete="off" type="password" [(ngModel)]="postData.password"></ion-input>
+        <ion-input autocomplete="off" type="password"></ion-input>
       </ion-item>
 
       <ion-item lines='none'>
         <a routerLink='/signup'>Create Account</a>
       </ion-item>
     </ion-list>
-    <ion-button expand="block" share="round" color="success" (click)="loginAction()">Login</ion-button>
+    <ion-button expand="block" share="round" color="success" (click)="login()">Login</ion-button>
   </form>
 </ion-content>
