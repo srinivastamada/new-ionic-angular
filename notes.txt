@@ -23,6 +23,9 @@ CREATE src/app/services/https.service.spec.ts (359 bytes)
 CREATE src/app/services/http.service.ts (140 bytes)
 </div>
 
+app module import and HttpClientModule
+import { HttpClientModule } from '@angular/common/http';
+
 <div class="codeDark">
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
