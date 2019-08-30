@@ -20,6 +20,6 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm install
-        ionic build --prod
+        npm start build --prod
       env:
         CI: true
