@@ -1,19 +1,17 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from './../services/auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeGuard implements CanActivate {
-  constructor(private authService: AuthService, private router: Router) {}
-
+  constructor(public authService: AuthService, public router: Router) {}
   canActivate(): boolean {
-    if (this.authService.isAuthenticated() === false) {
-      this.router.navigate(['']);
+    if (!this.authService.isAuthenticated()) {
+      this.router.navigate(['login']);
       return false;
-    } else {
-      return true;
     }
+    return true;
   }
 }

@@ -6,14 +6,12 @@ import { AuthService } from './../services/auth.service';
   providedIn: 'root'
 })
 export class IndexGuard implements CanActivate {
-  constructor(private authService: AuthService, private router: Router) {}
-
+  constructor(public authService: AuthService, public router: Router) {}
   canActivate(): boolean {
-    if (this.authService.isAuthenticated() === true) {
-      this.router.navigate(['/home/feed']);
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['home/feed']);
       return false;
-    } else {
-      return true;
     }
+    return true;
   }
 }
