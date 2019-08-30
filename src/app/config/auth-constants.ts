@@ -1,3 +1,3 @@
-export class  AuthConstants  {
-    public static readonly AUTH = 'userData'
-};
+export class AuthConstants {
+  public static readonly AUTH = 'userData';
+}
