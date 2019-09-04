@@ -1,17 +1,17 @@
-import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './../../services/auth.service';
 
 @Component({
   selector: 'app-feed',
   templateUrl: './feed.page.html',
-  styleUrls: ['./feed.page.scss'],
+  styleUrls: ['./feed.page.scss']
 })
 export class FeedPage implements OnInit {
-
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService) {}
 
   ngOnInit() {
-    console.log(this.auth.userData$.getValue());
+    this.auth.userData$.subscribe(res => {
+      console.log(res);
+    });
   }
-
 }

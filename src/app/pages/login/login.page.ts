@@ -24,7 +24,7 @@ export class LoginPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.authService.isAuthenticated();
+   
   }
 
   validateInputs() {
