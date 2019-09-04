@@ -9,7 +9,6 @@ import { StorageService } from './storage.service';
   providedIn: 'root'
 })
 export class AuthService {
-  authState$ = new BehaviorSubject(false);
   userData$ = new BehaviorSubject<any>([]);
 
   constructor(
@@ -17,15 +16,6 @@ export class AuthService {
     private storageService: StorageService,
     private router: Router
   ) {}
-
-  isAuthenticated() {
-    this.getUserData();
-    if(this.userData$.getValue()){
-      return true;
-    } else {
-      return false;
-    }
-  }
 
   getUserData() {
     this.storageService.get(AuthConstants.AUTH).then(res => {

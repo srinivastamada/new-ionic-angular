@@ -45,11 +45,11 @@ export class LoginPage implements OnInit {
         (res: any) => {
           if (res.userData) {
             // Storing the User data.
-            this.storageService.store(AuthConstants.AUTH, res.userData).then(res =>{
-              this.authService.authState$.next(true);
-              this.router.navigate(['home/feed']);
-            });
-           
+            this.storageService
+              .store(AuthConstants.AUTH, res.userData)
+              .then(res => {
+                this.router.navigate(['home/feed']);
+              });
           } else {
             this.toastService.presentToast('Incorrect username and password.');
           }
