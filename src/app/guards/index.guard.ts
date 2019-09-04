@@ -8,6 +8,7 @@ import { AuthService } from '../services/auth.service';
 export class IndexGuard implements CanActivate {
   constructor(public authService: AuthService, public router: Router) {}
   canActivate(): boolean {
+    console.log(this.authService.isAuthenticated());
     if (this.authService.isAuthenticated()) {
       this.router.navigate(['home/feed']);
       return false;

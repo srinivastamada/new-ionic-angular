@@ -1,3 +1,4 @@
+import { AuthConstants } from './../config/auth-constants';
 import { Injectable } from '@angular/core';
 import { Plugins } from '@capacitor/core';
 const { Storage } = Plugins;
@@ -24,8 +25,8 @@ export class StorageService {
     } else {
       return false;
     }
-    
   }
+
 
   async removeStorageItem(storageKey: string) {
     await Storage.remove({ key: storageKey });

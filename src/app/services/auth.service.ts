@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { AuthConstants } from '../config/auth-constants';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { AuthConstants } from './../config/auth-constants';
 import { HttpService } from './http.service';
 import { StorageService } from './storage.service';
 
@@ -9,6 +9,9 @@ import { StorageService } from './storage.service';
   providedIn: 'root'
 })
 export class AuthService {
+  authState$ = new BehaviorSubject(false);
+  userData$ = new BehaviorSubject<any>([]);
+
   constructor(
     private httpService: HttpService,
     private storageService: StorageService,
@@ -16,18 +19,18 @@ export class AuthService {
   ) {}
 
   isAuthenticated() {
-    // let valueStatus = false;
-    // const authStorage = this.storageService
-    //   .get(AuthConstants.AUTH)
-    //   .then(value => {
-    //     if (value) {
-         
-    //       valueStatus = true;
-    //     }
-    //     console.log(value);
-    //     return valueStatus;
-    //   });
-    return true;
+    this.getUserData();
+    if(this.userData$.getValue()){
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  getUserData() {
+    this.storageService.get(AuthConstants.AUTH).then(res => {
+      this.userData$.next(res);
+    });
   }
 
   login(postData: any): Observable<any> {
@@ -39,7 +42,9 @@ export class AuthService {
   }
 
   logout() {
-    this.storageService.clear();
-    this.router.navigate(['login']);
+    this.storageService.removeStorageItem(AuthConstants.AUTH).then(res => {
+      this.userData$.next('');
+      this.router.navigate(['/login']);
+    });
   }
 }
