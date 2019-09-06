@@ -38,8 +38,18 @@ const routes: Routes = [
           import('../pages/settings/settings.module').then(
             m => m.SettingsPageModule
           )
+      },
+      {
+        path: '',
+        redirectTo: '/home/feed',
+        pathMatch: 'full'
       }
     ]
+  },
+  {
+    path: '',
+    redirectTo: '/home/feed',
+    pathMatch: 'full'
   }
 ];
 

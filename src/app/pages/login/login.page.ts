@@ -24,7 +24,7 @@ export class LoginPage implements OnInit {
   ) {}
 
   ngOnInit() {
-   
+
   }
 
   validateInputs() {
@@ -48,7 +48,7 @@ export class LoginPage implements OnInit {
             this.storageService
               .store(AuthConstants.AUTH, res.userData)
               .then(res => {
-                this.router.navigate(['home/feed']);
+                this.router.navigate(['home']);
               });
           } else {
             this.toastService.presentToast('Incorrect username and password.');

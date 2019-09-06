@@ -14,7 +14,7 @@ export class IndexGuard implements CanActivate {
         .get(AuthConstants.AUTH)
         .then(res => {
           if (res) {
-            this.router.navigate(['home/feed']);
+            this.router.navigate(['home']);
             resolve(false);
           } else resolve(true);
         })
