@@ -7,11 +7,12 @@ import { AuthService } from './../../services/auth.service';
   styleUrls: ['./feed.page.scss']
 })
 export class FeedPage implements OnInit {
+  public authUser: any;
   constructor(private auth: AuthService) {}
 
   ngOnInit() {
-    this.auth.userData$.subscribe(res => {
-      console.log(res);
+    this.auth.userData$.subscribe((res:any) => {
+     this.authUser = res;
     });
   }
 }

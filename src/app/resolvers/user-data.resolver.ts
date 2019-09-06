@@ -1,16 +1,14 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class UserDataResolver {
-    constructor(private authService: AuthService) {
+  constructor(private authService: AuthService) {}
 
-    }
-
-    resolve(){
-        console.log("Hello");
-        return this.authService.getUserData();
-    }
+  resolve() {
+    console.log('Hello');
+    return this.authService.getUserData();
+  }
 }
