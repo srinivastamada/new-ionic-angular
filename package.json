@@ -10,8 +10,12 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ios": "ionic capactior copy ios",
-    "android": "ionic capactior copy android"
+    "ios": "ionic capactior add ios",
+    "android": "ionic capactior add android",
+    "ios-copy": "ionic capactior copy ios",
+    "android-copy": "ionic capactior copy android",
+    "ios-open": "ionic capactior open ios",
+    "android-open": "ionic capactior open android"
   },
   "private": true,
   "dependencies": {
