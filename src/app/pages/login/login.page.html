@@ -13,12 +13,12 @@
     <ion-list>
       <ion-item>
         <ion-label position="stacked">Username</ion-label>
-        <ion-input autocomplete="off" type="text"></ion-input>
+        <ion-input autocomplete="off" type="text" name="username" [(ngModel)]="postData.username"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Password</ion-label>
-        <ion-input autocomplete="off" type="password"></ion-input>
+        <ion-input autocomplete="off" type="password" name="password" [(ngModel)]="postData.password"></ion-input>
       </ion-item>
 
       <ion-item lines='none'>
