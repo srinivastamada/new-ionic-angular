@@ -53,7 +53,7 @@ export class SignupPage implements OnInit {
             this.storageService
               .store(AuthConstants.AUTH, res.userData)
               .then(res => {
-                this.router.navigate(['home/feed']);
+                this.router.navigate(['home']);
               });
           } else {
             this.toastService.presentToast(
