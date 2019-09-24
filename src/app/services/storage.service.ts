@@ -28,12 +28,6 @@ export class StorageService {
     }
   }
 
-// JSON "get" example
-async getObject() {
-  const ret = await Storage.get({ key: 'user' });
-  const user = JSON.parse(ret.value);
-}
-
 
   async removeStorageItem(storageKey: string) {
     await Storage.remove({ key: storageKey });
