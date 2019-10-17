@@ -27,7 +27,13 @@ export class StorageService {
     }
   }
 
+// JSON "get" example
+async getObject() {
+  const ret = await Storage.get({ key: 'user' });
+  const user = JSON.parse(ret.value);
+}
 
+<<<<<<< HEAD
   async removeStorageItem(storageKey: string) {
     await Storage.remove({ key: storageKey });
   }
@@ -37,4 +43,30 @@ export class StorageService {
   async clear() {
     await Storage.clear();
   }
+=======
+async setItem() {
+  await Storage.set({
+    key: 'name',
+    value: 'Max'
+  });
+}
+
+async getItem() {
+  const value = await Storage.get({ key: 'name' });
+  console.log('Got item: ', value);
+}
+
+async removeItem() {
+  await Storage.remove({ key: 'name' });
+}
+
+async keys() {
+  const keys = await Storage.keys();
+  console.log('Got keys: ', keys);
+}
+
+async clear() {
+  await Storage.clear();
+}
+>>>>>>> master
 }
