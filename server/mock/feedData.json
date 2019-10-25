@@ -2,61 +2,61 @@
     "feedData": [
         {
             "feed_id": "853",
-            "feed": "Messaeg 1",
+            "feed": "Message 1",
             "user_id_fk": "1",
             "created": "1566456759"
         },
         {
             "feed_id": "850",
-            "feed": "Messaeg 2",
+            "feed": "Message 2",
             "user_id_fk": "1",
             "created": "1566283656"
         },
         {
             "feed_id": "840",
-            "feed": "Messaeg 3",
+            "feed": "Message 3",
             "user_id_fk": "1",
             "created": "1566137529"
         },
         {
             "feed_id": "788",
-            "feed": "Messaeg 4",
+            "feed": "Message 4",
             "user_id_fk": "1",
             "created": "1565074471"
         },
         {
             "feed_id": "700",
-            "feed": "Messaeg 5",
+            "feed": "Message 5",
             "user_id_fk": "1",
             "created": "1563872497"
         },
         {
             "feed_id": "699",
-            "feed": "Messaeg 6",
+            "feed": "Message 6",
             "user_id_fk": "1",
             "created": "1563872391"
         },
         {
             "feed_id": "685",
-            "feed": "Messaeg 7",
+            "feed": "Message 7",
             "user_id_fk": "1",
             "created": "1563712541"
         },
         {
             "feed_id": "675",
-            "feed": "Messaeg 8",
+            "feed": "Message 8",
             "user_id_fk": "1",
             "created": "1563519224"
         },
         {
             "feed_id": "613",
-            "feed": "Messaeg 9",
+            "feed": "Message 9",
             "user_id_fk": "1",
             "created": "1562480696"
         },
         {
             "feed_id": "596",
-            "feed": "Messaeg 10",
+            "feed": "Message 10",
             "user_id_fk": "1",
             "created": "1562316826"
         }
