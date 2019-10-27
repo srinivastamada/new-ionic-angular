@@ -1,4 +1,3 @@
-import { AuthConstants } from './../config/auth-constants';
 import { Injectable } from '@angular/core';
 import { Plugins } from '@capacitor/core';
 const { Storage } = Plugins;
@@ -6,7 +5,6 @@ const { Storage } = Plugins;
   providedIn: 'root'
 })
 export class StorageService {
-
   constructor() {}
 
   // Store the value
@@ -21,22 +19,32 @@ export class StorageService {
   // Get the value
   async get(storageKey: string) {
     const ret = await Storage.get({ key: storageKey });
-    if(ret.value){
+    if (ret.value) {
       return JSON.parse(unescape(atob(ret.value)));
     } else {
       return false;
     }
   }
 
-
-  async removeStorageItem(storageKey: string) {
-    await Storage.remove({ key: storageKey });
+  // JSON "get" example
+  async getObject() {
+    const ret = await Storage.get({ key: 'user' });
+    const user = JSON.parse(ret.value);
   }
 
- 
-  // Clear storage
+  async setItem() {
+    await Storage.set({
+      key: 'name',
+      value: 'Max'
+    });
+  }
+
+  async keys() {
+    const keys = await Storage.keys();
+    console.log('Got keys: ', keys);
+  }
+
   async clear() {
     await Storage.clear();
   }
-
 }

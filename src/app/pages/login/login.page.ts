@@ -23,9 +23,7 @@ export class LoginPage implements OnInit {
     private toastService: ToastService
   ) {}
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   validateInputs() {
     console.log(this.postData);
