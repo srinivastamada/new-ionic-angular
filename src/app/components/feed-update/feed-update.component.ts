@@ -17,17 +17,17 @@ export class FeedUpdateComponent implements OnInit {
   };
   constructor(private feedService: FeedService) {}
 
-  ngOnInit() {
-  
-  }
+  ngOnInit() {}
 
   feedUpdateAction() {
-    this.postData.lastCreated = '';
-    this.postData.user_id = this.loginUser.user_id;
-    this.postData.token = this.loginUser.token;
-    this.feedService.feedUpdate(this.postData).subscribe((res: any) => {
-      this.postData.feed ='';
-      this.feedService.updateFeedData(res.feedData);
-    });
+    if (this.postData.feed.length > 0) {
+      this.postData.lastCreated = '';
+      this.postData.user_id = this.loginUser.user_id;
+      this.postData.token = this.loginUser.token;
+      this.feedService.feedUpdate(this.postData).subscribe((res: any) => {
+        this.postData.feed = '';
+        this.feedService.updateFeedData(res.feedData);
+      });
+    }
   }
 }

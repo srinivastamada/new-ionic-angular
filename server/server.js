@@ -72,13 +72,14 @@ app.post('/feed', function(req, res, next) {
 
 app.post('/feedUpdate', function(req, res, next) {
   let data = JSON.parse(req.body);
+  let created = Date.now() / 1000;
   if (data.token && data.user_id === '1' && data.feed) {
     return res.status(200).send({
       feedData: {
         feed_id: '1094',
-        feed: 'asdfs',
+        feed: data.feed,
         user_id_fk: '1',
-        created: '1571415268'
+        created: created
       }
     });
   } else {
