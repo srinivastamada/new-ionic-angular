@@ -33,17 +33,6 @@ async getObject() {
   const user = JSON.parse(ret.value);
 }
 
-<<<<<<< HEAD
-  async removeStorageItem(storageKey: string) {
-    await Storage.remove({ key: storageKey });
-  }
-
- 
-  // Clear storage
-  async clear() {
-    await Storage.clear();
-  }
-=======
 async setItem() {
   await Storage.set({
     key: 'name',
@@ -68,5 +57,4 @@ async keys() {
 async clear() {
   await Storage.clear();
 }
->>>>>>> master
 }
